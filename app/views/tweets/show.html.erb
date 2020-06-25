@@ -1,0 +1,17 @@
+<div class="postTitle">
+  <%= @tweet.title %>
+</div>
+<div class="postDate">
+  <%= @tweet.created_at %>
+</div>
+<div class="postAuthor">
+</div>
+<div class="postManage">
+  <% if user_signed_in? && current_user.id == @tweet.user_id %>
+    <%= link_to "編集", edit_tweet_path(@tweet.id), class: "postManage__edit"%>
+    <%= link_to '削除', tweet_path(@tweet.id), method: :delete, class: "postManage__delete" %>
+  <% end %>
+</div>
+<div class="postText">
+  <%= simple_format @tweet.content %>
+</div>
