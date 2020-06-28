@@ -15,3 +15,18 @@
 <div class="postText">
   <%= simple_format @tweet.content %>
 </div>
+<div class="postFavorite">
+  <% if current_user.done_favorites?(@tweet)%>
+    <%= link_to  tweet_favorites_path(@tweet), method: :delete do %>
+      <i class="fas fa-heart"></i>
+        <% end %>
+  <% else %>
+    <%= link_to tweet_favorites_path(@tweet), method: :post do %>
+       <i class="fas fa-heart"></i>
+        <% end %>
+  <% end %>
+  <div class="postFavorite--count">
+    <%= @tweet.favorites.count %>
+     </div>
+  </div>
+    

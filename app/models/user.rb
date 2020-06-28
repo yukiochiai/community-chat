@@ -3,5 +3,19 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+ 
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
   has_many :tweets
+  has_many :favorites
+
+  def done_favorites?(tweet)
+    self.favorites.exists?(tweet_id: tweet.id)
+  end
+
+  def self.guest
+    find_or_create_by!(email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+    end
+  end
 end

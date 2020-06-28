@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/f2ec3b680c.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <header class="header">
@@ -23,9 +24,16 @@
         <% else %>
           <%= link_to "ログイン",  new_user_session_path, class: "header__right--btn" %>
           <%= link_to "新規登録",  new_user_registration_path, class: "header__right--btn" %>
+          <%= link_to "ゲストログイン",  users_guest_sign_in_path, method: :post, class: "header__right--btn"%>
         <% end %>
       </div>
     </header>
+    <% if flash[:notice] %>
+     <div class="alert alert-primary" role="alert"><strong><%= notice %></strong></div>
+     <% end %>
+     <% if flash[:alert] %>
+     <div class="alert alert-danger" role="alert"><strong><%= alert %></strong></div>
+     <% end %>
     <div class="contents">
       <%= yield %>
     </div>
