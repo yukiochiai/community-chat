@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: community-chat_production
-  username: community-chat
-  password: <%= ENV['COMMUNITY-CHAT_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
