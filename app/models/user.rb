@@ -6,8 +6,8 @@ class User < ApplicationRecord
  
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :tweets
-  has_many :favorites
+  has_many :tweets, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 
   def done_favorites?(tweet)
     self.favorites.exists?(tweet_id: tweet.id)

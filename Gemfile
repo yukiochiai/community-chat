@@ -55,3 +55,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'font-awesome-sass'
 gem 'devise'
 gem 'rails-i18n', '~> 5.1'
+gem 'kaminari'
+gem 'carrierwave'
+gem 'rmagick'
+group :production do
+  gem 'unicorn', '5.4.1'
+end

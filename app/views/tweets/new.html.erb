@@ -1,9 +1,17 @@
 <div class="new__title">
-  新規記事の作成
+  新規情報の作成
 </div>
 
-<%= form_with model: @tweet, class: :form, local:true do |form| %>
-  <%= form.text_field :title, placeholder: :タイトル, class: :form__title %>
-  <%= form.text_area :content, placeholder: :ブログ本文, class: :form__text %>
-  <%= form.submit '投稿する', class: :form__btn %>
+<%= form_with model: @tweet, class: :form, local:true do |f| %>
+  <%= f.text_field :title, placeholder: :タイトル, class: :form__title %>
+  <p class="image__title">
+   投稿画像
+   </p>
+  <%= f.label :image do%>
+  <%= f.file_field :image, class: :form__image %><br>
+  <%end%>
+  <%= f.select :category, [["食べ歩き", "食べ歩き"],["お食事処", "お食事処"],["アクティビティ","アクティビティ"], ["施設", "施設"],["寺社仏閣", "寺社仏閣"]], class: :form__select  %>
+  <%= f.text_area :content, placeholder: :本文, class: :form__text %>
+  <%=%>
+  <%= f.submit '投稿する', class: :form__btn %>
 <% end %>

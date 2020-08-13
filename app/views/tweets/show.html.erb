@@ -1,32 +1,17 @@
-<div class="postTitle">
-  <%= @tweet.title %>
-</div>
-<div class="postDate">
-  <%= @tweet.created_at %>
-</div>
-<div class="postAuthor">
-</div>
-<div class="postManage">
-  <% if user_signed_in? && current_user.id == @tweet.user_id %>
-    <%= link_to "編集", edit_tweet_path(@tweet.id), class: "postManage__edit"%>
-    <%= link_to '削除', tweet_path(@tweet.id), method: :delete, class: "postManage__delete" %>
-  <% end %>
-</div>
-<div class="postText">
-  <%= simple_format @tweet.content %>
-</div>
-<div class="postFavorite">
-  <% if current_user.done_favorites?(@tweet)%>
-    <%= link_to  tweet_favorites_path(@tweet), method: :delete do %>
-      <i class="fas fa-heart"></i>
-        <% end %>
-  <% else %>
-    <%= link_to tweet_favorites_path(@tweet), method: :post do %>
-       <i class="fas fa-heart"></i>
-        <% end %>
-  <% end %>
-  <div class="postFavorite--count">
-    <%= @tweet.favorites.count %>
-     </div>
+<div class="contentShow">
+  <div class="postTitle">
+    <%= @tweet.title %>
   </div>
-    
+  <div class="postDate">
+    <%= @tweet.created_at.strftime("%Y年%m月%d日") %>
+  </div>
+  <div class="postManage">
+    <% if user_signed_in? && current_user.id == @tweet.user_id %>
+      <%= link_to "編集", edit_tweet_path(@tweet.id), class: "postManage__edit"%>
+      <%= link_to '削除', tweet_path(@tweet.id), method: :delete, class: "postManage__delete" %>
+    <% end %>
+  </div>
+  <div class="postText">
+    <%= simple_format @tweet.content %>
+  </div>
+</div>

@@ -1,7 +1,8 @@
 class TweetsController < ApplicationController
+  before_action :authenticate_user!
 
   def index
-    @tweets = Tweet.includes(:user)
+    @tweets = Tweet.includes(:user).order("created_at DESC").page(params[:page]).per(10)
   end
 
   def guest
@@ -23,7 +24,7 @@ class TweetsController < ApplicationController
     if @tweet.save
       redirect_to root_path(@tweet), notice: '投稿に成功しました'
     else 
-      flash.now[:alert] = 'タイトルとブログ本文を両方入力してください'
+      flash.now[:alert] = 'すべての項目を入力してください'
       render :new
     end
   end
@@ -55,7 +56,7 @@ class TweetsController < ApplicationController
   end
   private
   def tweet_params
-    params.require(:tweet).permit(:title, :content).merge(user_id: current_user.id)
+    params.require(:tweet).permit(:title, :image, :content, :category).merge(user_id: current_user.id)
   end
 end
 

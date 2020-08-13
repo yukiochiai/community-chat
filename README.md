@@ -1,24 +1,42 @@
-# README
+# Asakusa_info
+浅草の観光情報を共有できるサイト
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
 
-Things you may want to cover:
+|Column|Type|Option|
+|------|----|------|
+|nickname|string|
+|email|string|null: false|
+|encrypted_password|string|null: false|
+|reset_password_token|string|
+|resetpassword_sent_at|string|
 
-* Ruby version
+### Association
+- has_many :tweets, dependent: :destroy
+- has_many :favorites, dependent: :destroy
 
-* System dependencies
 
-* Configuration
+## tweetsテーブル
 
-* Database creation
+|Column|Type|Option|
+|------|----|------|
+|title|string|null: false|
+|category|string|null: false|
+|image|string|null: false|
+|content|text|null: false|
 
-* Database initialization
+### Association
+- belongs_to :user
+- has_many :favorites, dependent: :destroy
+- has_many :comments
+- mount_uploader :image, ImageUploader
 
-* How to run the test suite
+## favorites テーブル
+|Column|Type|Option|
+|------|----|------|
+|user_id|integer|
+|tweet_id|integer|
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Association
+- belongs_to :user
+- belongs_to :tweet

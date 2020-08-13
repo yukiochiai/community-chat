@@ -1,18 +1,21 @@
 <div class="content">
+   <div class="content__top">
+    <%= tweet.category %>
+   </div>
     <div class="content__left">
-      <div class="content__left--image"></div>
-    </div>
-    <div class="content__right">
+     <%= image_tag tweet.image.url %>
+      <div class="content__left--image">
+      </div>
+     </div>
+     <div class="content__right">
       <div class="content__right__top">
         <%= link_to tweet.title, tweet_path(tweet.id), class: "content__right__top--title" %>
-      </div>
       <div class="content__right__bottom">
-         <div class="content__right__bottom--userName">
-          <%= tweet.user.nickname %>
-        </div>
         <div class="content__right__bottom--date">
           <%= tweet.created_at.strftime("%Y年%m月%d日") %>
         </div>
+      </div>
+     </div>
       </div>
       <div class="content__under">
         <% if current_user.done_favorites?(tweet)%>
@@ -26,7 +29,6 @@
         <% end %>
         <div class="content__under--count">
           <%= tweet.favorites.count %>
-       </div>
-      </div>
-    </div>
-  </div>
+        </div>
+     </div>
+</div>
