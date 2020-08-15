@@ -58,6 +58,7 @@ gem 'rails-i18n', '~> 5.1'
 gem 'kaminari'
 gem 'carrierwave'
 gem 'rmagick'
+gem 'fog-aws'
 group :production do
   gem 'unicorn', '5.4.1'
 end
@@ -68,4 +69,3 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
 end
-gem 'fog-aws'
