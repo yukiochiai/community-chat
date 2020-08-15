@@ -13,5 +13,5 @@ CarrierWave.configure do |config|
   }
 
   config.fog_directory  = 'asakusainfo'
-  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/asakusainfo'
+  config.asset_host = 'https://asakusainfo.s3.amazonaws.com'
 end
