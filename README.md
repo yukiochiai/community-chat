@@ -14,7 +14,7 @@ http://54.150.13.58/
 浅草観光といってもバラエティーに溢れているため、様々なニーズに応え、タグ付け機能を取り入れました。文字の情報量が多いと、ユーザーとして使いにくさがあると思い、画像を大きく見せ、シンプルな設計をなるよう工夫しました。
 
 ## 使用技術(開発環境)
-Ruby 2.5.1<br>Rails 5.2.3<br>
+Ruby 2.5.1<br>Ruby on Rails 5.2.3<br>MySQL5.6.47<br>HTML<br>CSS<br>AWS(EC2,IAM,S3)<br>Github<br>Nginx, Unicorn
 
 ## usersテーブル
 |Column|Type|Option|
