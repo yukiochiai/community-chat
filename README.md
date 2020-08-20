@@ -17,7 +17,11 @@ http://54.150.13.58/
 ・ Ruby 2.5.1<br>・ Ruby on Rails 5.2.3<br>・ MySQL5.6.47<br>・ HTML<br>・ CSS<br>・ AWS(EC2,SSM,S3)<br>・ Github<br>・ Nginx, Unicorn
 
 ## 課題や今後実装したい機能
-
+・　機能数が少なく、簡素的なサイトになっている。<br>
+・　検索でユーザーの希望にヒットしにくい。<br>
+・　検索しやすいように、検索機能に絞り込みの条件を実装したい。<br>
+・　Javascriptを使用してUI/UXを整えていきたい。<br>
+・　開発をよりスムーズに効率的に進めるために、docker-composeとCircleCIを学び取り入れたい。<br>
 ## usersテーブル
 |Column|Type|Option|
 |------|----|------|
