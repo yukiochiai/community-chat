@@ -8,6 +8,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :tweets, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  validates :nickname, presence: true, length: { maximum: 6 }
 
   def done_favorites?(tweet)
     self.favorites.exists?(tweet_id: tweet.id)
