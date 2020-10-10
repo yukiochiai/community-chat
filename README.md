@@ -24,7 +24,7 @@ http://54.150.13.58/
 浅草観光といってもバラエティーに溢れているため、様々なニーズに応え、タグを取り入れました。また、第一印象で楽しそうや美味しそうというイメージを描かせるために画像をメインに見せ、文章の情報が多くならないよう、シンプルな設計になるよう工夫しました。
 
 ## 使用技術(開発環境)
-・ Ruby 2.5.1<br>・ Ruby on Rails 5.2.3<br>・ MySQL5.6.47<br>・ HTML<br>・ CSS<br>・ AWS(EC2,RDS,S3)<br>・ Github<br>・ Nginx, Unicorn<br>・Rspec(単体/結合）
+・ Ruby 2.5.1<br>・ Ruby on Rails 5.2.3<br>・ MySQL5.6.47<br>・ HTML<br>・ CSS<br>・ AWS(EC2,S3)<br>・ MySQL<br>・ Nginx, Unicorn<br>・Rspec(単体/結合）
 
 ## 課題や今後実装したい機能
 ・　機能数が少なく、簡素的なサイトになっている。<br>
